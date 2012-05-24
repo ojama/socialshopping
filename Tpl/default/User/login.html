@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>会员登录</title>
+        <link rel='stylesheet' type='text/css' href='__PUBLIC__/Css/common.css'>
+    </head>
+    <body>
+    	<div class="head">
+        <include file="./Tpl/default/Public/statusbar.html" />
+        <p id="lg"><img src="/Public/Images/logo80x80.jpg" width="80" height="80" usemap="#mp"></p>
+        </div>
+        <div class="main">
+		<include file="./Tpl/default/Public/control.html" />
+            <div id="content">
+            	<h2>登录</h2>
+                <form action="/User/act_login" method="post">
+                <table width="500" border="0">
+                  <tr>
+                    <td>用户名：</td>
+                    <td><input type="text"  name="username"/></td>
+                  </tr>
+                  <tr>
+                    <td>密码：</td>
+                    <td><input type="password" name="password" /></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit"  value="登录"/></td>
+                  </tr>
+                </table>
+                
+                </form>
+            </div>		
+        </div>
+			<include file="./Tpl/default/Public/footer.html" />
+    </body>
+</html>

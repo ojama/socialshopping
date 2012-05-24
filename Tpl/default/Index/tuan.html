@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>购物点评----{$keyword}的搜索结果</title>
+        <link rel='stylesheet' type='text/css' href='__PUBLIC__/Css/common.css'>
+        <script src='__PUBLIC__/Js/jquery-1.7.2.js'></script>
+		<script src='__PUBLIC__/Js/mysearch.js'></script>
+</head>
+    <body>
+    	<div class="head">
+        <include file="./Tpl/Public/statusbar.html" />
+        <p id="lg"><img src="/Public/Images/logo80x80.jpg" width="150" height="150" usemap="#mp"></p>
+        <div id="fm">
+        <form name="f" action="http://www.test2.com/Index/tuan"  method="get">
+        <p><input name="keyword" type="text" value="{$keyword}">
+        <input name="" type="submit" value="搜索">
+        </p>
+        <p>高级选项：
+        <input name="minprice" type="text" value="{$minprice}" size="4">-<input name="maxprice" value="{$maxprice}" type="text" size="4">元&nbsp;&nbsp;
+          <label>
+            <input type="checkbox" name="merchantids[]" value="100016" id="merchantid_0">
+            京东</label>
+          
+          <label>
+            <input type="checkbox" name="merchantids[]" value="100175" id="merchantid_1">
+            当当</label>
+         
+        </p>
+        </form>  
+        </div>
+        </div>
+        <div class="main">
+        <div class="result">
+<foreach name="list" item="vo" key="id">
+<table cellpadding="0" cellspacing="0" class="result"  width="80%" id="tb_{$id}"><tbody><tr>
+  <td class="f"><h3 class="t"><a href="{$vo.url}" target="_blank">{$vo.productName}</a>&nbsp;&nbsp;{$vo.showPrice}元
+</h3><font size="-1">{$vo.shortIntro}<br>
+<span class="g">{$vo.rawurl}</span> - <a href="{$vo.merchantTopurl}" target="_blank" class="m">{$vo.merchantName}</a> <br>
+<a href="javascript:void(0);" title="顶:{$vo.good}" onClick="rate({$vo.id},'good');"><em class="ico_up"></em><em class="stat" id="stat_good_{$vo.id}">顶:{$vo.good}</em></a>
+<a href="javascript:void(0);" title="踩:{$vo.bad}" onClick="rate({$vo.id},'bad');"><em class="ico_down"></em><em class="stat" id="stat_bad_{$vo.id}">踩:{$vo.bad}</em></a>
+<a href="javascript:void(0);" onClick="showcomment({$vo.id},1);" id="comment_count_{$vo.id}">评论({$vo.commentcount})</a>
+<br></font></td>
+<td class="f"><img src="{$vo.picurl}" width="150px"></td>
+</tr>
+<tr>
+  <td colspan="2"><form name="form_{$id}" id="comment_form_{$vo.id}" class="comment_form" method="post" action="/Comment/add"  style="display:none" ><input name="productid" type="hidden" value="{$vo.id}"><input name="comment" type="text" value=""><input name="提交" type="submit" value="评论一下">
+  </form><br><div id="comment_list_{$vo.id}" style="display:none"></div></td></tr>
+</tbody></table>
+<br>
+</foreach>
+</div>
+<span id="pager" class="db50">{$pager}</span>
+<div id="fm_below">
+        <form name="f" action="http://www.test2.com/Index/search"  method="get">
+        <p><input name="keyword" type="text" value="{$keyword}">
+        <input name="" type="submit" value="搜索">
+        </p>
+        <p>高级选项：
+        <input name="minprice" type="text" value="{$minprice}" size="4">-<input name="maxprice" value="{$maxprice}" type="text" size="4">元&nbsp;&nbsp;
+          <label>
+            <input type="checkbox" name="merchantids[]" value="100016" id="merchantid_0">
+            京东</label>
+          
+          <label>
+            <input type="checkbox" name="merchantids[]" value="100175" id="merchantid_1">
+            当当</label>
+         
+        </p>
+        </form>  
+        </div>
+</div>
+        <div class="foot">
+        
+        
+        </div>
+    </body>
+</html>

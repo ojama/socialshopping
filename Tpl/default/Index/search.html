@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>购物点评----{$keyword}的搜索结果</title>
+        <link rel='stylesheet' type='text/css' href='__PUBLIC__/Css/common.css'>
+        <script src='__PUBLIC__/Js/jquery-1.7.2.js'></script>
+		<script src='__PUBLIC__/Js/mysearch.js'></script>
+        <script src='__PUBLIC__/Js/jquery.cookies.2.2.0.min.js'></script>
+        
+</head>
+<body>
+    	<div class="head">
+        <include file="./Tpl/default/Public/statusbar.html" />
+		<include file="./Tpl/default/Public/searchformup.html" />	
+</div>
+        <div class="main">
+        <div class="result" id="res">
+        <ol>
+<foreach name="list" item="vo" key="id">
+<li class="g" id="product_{$vo.id}">
+<h3 class="t"><a href="{$vo.url}" target="_blank">{$vo.productName}</a>&nbsp;&nbsp;{$vo.showPrice}元</h3>
+    <div class="intro">
+        <div class="intro_text">{$vo.shortIntro}</div>
+        <div class="intro_pic"><img src="{$vo.picurl}" height="120"></div>
+    </div>
+    <div class="merchantinfo">
+    <cite>{$vo.rawurl}</cite> - <a href="{$vo.merchantTopurl}" target="_blank" class="m">{$vo.merchantName}</a>
+    </div>
+    <div class="commentinfo">
+    <a href="javascript:void(0);" title="顶:{$vo.good}" onClick="rate({$vo.id},'good');"><em class="ico_up"></em><em class="stat" id="stat_good_{$vo.id}">顶:{$vo.good}</em></a>
+    <a href="javascript:void(0);" title="踩:{$vo.bad}" onClick="rate({$vo.id},'bad');"><em class="ico_down"></em><em class="stat" id="stat_bad_{$vo.id}">踩:{$vo.bad}</em></a>
+    <strong class="btn-type-b btn-fn-c">
+    <a href="javascript:void(0);" onClick="showcomment({$vo.id},1);" id="comment_count_{$vo.id}" class="comment">评论({$vo.commentcount})</a></strong>
+    <a href="javascript:void(0);" onClick="addcompare('{$vo.id}');">添加比较</a>
+    <form name="form_{$id}" id="comment_form_{$vo.id}" class="comment_form" method="post" action="/Comment/add"  style="display:none" ><input name="productid" type="hidden" value="{$vo.id}">您的点评：<input name="comment" type="text" value=""><input name="提交" type="submit" value="评论一下">
+  </form>
+  <div id="comment_list_{$vo.id}" style="display:none"></div>
+    </div>
+</li>
+
+
+</foreach>
+</ol>
+<span id="pager" >{$pager}</span>
+</div>
+
+<div id="fm_below">
+        <form name="f" action="http://www.test2.com/Index/search"  method="get">
+        <p><input name="keyword" type="text" value="{$keyword}" maxlength="100" data-autofocus="autofocus" x-webkit-speech >
+        <input name="" type="submit" value="搜索">
+        </p>
+        <p>高级选项：
+        <input name="minprice" type="text" value="{$minprice}" size="4">-<input name="maxprice" value="{$maxprice}" type="text" size="4">元&nbsp;&nbsp;         
+        </p>
+        </form>  
+        </div>
+</div>
+<div id="compare">
+<a href="javascript:void(0);" id="hidecompare">隐藏</a>|<a href="javascript:void(0);" id="resetcompare">清空</a>|<a href="javascript:void(0);" id="gocompare">比较</a>|<a  href="javascript:void(0);" id="savecompare">保存</a>
+<ol id="compareitems">
+</ol>
+</div>
+	<include file="./Tpl/default/Public/footer.html" />
+</body>
+</html>

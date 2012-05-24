@@ -1,0 +1,19 @@
+        <div id="fm">
+        <p><a href="/Index/search?keyword={$keyword}">商品</a>|<a href="/Index/tuan?keyword={$keyword}">团购</a>|<a href="/Index/taobao?keyword={$keyword}">淘宝</a>|<a href="/Index/shop">商家</a></p>
+        <form name="f" id="f" action="http://www.test2.com/Index/search"  method="get">
+        <p><input name="keyword" type="text" value="{$keyword}" size="30"  width="300px" x-webkit-speech >
+        <input name="" type="submit" value="搜索">
+        </p>
+        <p id="advance">
+       <b>高级选项</b>  &nbsp;&nbsp;价格区间：
+        <input name="minprice" type="text" value="{$minprice}" size="4">-<input name="maxprice" value="{$maxprice}" type="text" size="4">
+        元
+        &nbsp;&nbsp;&nbsp;排序：
+        <select name="ordertype" id="ordertypeselect">
+           <option value="1" <if condition="$ordertype eq 1">selected</if>>按相关度排序</option>
+           <option value="2" <if condition="$ordertype eq 2">selected</if>>按价格从低到高排序</option>
+           <option value="3" <if condition="$ordertype eq 3">selected</if>>按价格从高到低排序</option>
+		</select>        
+        </p>
+        </form>  
+        </div>

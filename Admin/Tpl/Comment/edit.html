@@ -1,0 +1,36 @@
+<include file="Public:header" />
+<div id="main" class="main" >
+<div class="content">
+<div class="title">编辑<eq name="vo.level"  value="1">应用</eq><eq name="vo.level" value="2">模块</eq><eq name="vo.level"  value="3">操作</eq> [ <a href="__URL__">返回列表</a> ]</div>
+<form method='post'  id="form1" >
+<table >
+      <tr>
+        <td class="tRight" >评论内容：</td>
+        <td class="tLeft" ><textarea name="comment" class="medium bLeftRequire" check="Require">{$vo.comment}</textarea></td>
+      </tr>
+      <tr>
+        <td class="tRight">状态：</td>
+        <td class="tLeft"><select class="small bLeft"  name="status">
+          <option   <eq name="vo.status" value="1">selected</eq>  value="1">启用</option>
+          <option  <eq name="vo.status" value="0">selected</eq>  value="0">禁用</option>
+          </select>        
+          </td>
+      </tr>
+      <tr>
+        <td>          <input type="hidden" name="id" value="{$vo.id}" />
+          <input type="hidden" name="ajax" value="1" />
+          <input type="hidden" name="pid" value="{$vo.pid}" /></td>
+        <td class="center"><div style="width:85%;margin:5px">
+
+          <div class="impBtn fLeft">
+            <input type="button" value="保存" onclick="sendForm('form1','__URL__/update/','tips')" class="save imgButton" />
+            </div>
+          <div class="impBtn fRig">
+            <input type="reset" onclick="history.back(-1)" class="reset imgButton" value="取消" />
+            </div>
+          </div></td>
+      </tr>
+    </table>
+</form>
+</div>
+</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>会员注册</title>
+        <link rel='stylesheet' type='text/css' href='__PUBLIC__/Css/common.css'>
+    </head>
+    <body>
+    	<div class="head">
+        <include file="./Tpl/default/Public/statusbar.html" />
+        <p id="lg"><img src="/Public/Images/logo80x80.jpg" width="80" height="80" usemap="#mp"></p>
+        </div>
+        <div class="main">
+		<include file="./Tpl/default/Public/control.html" />
+            <div id="content">
+            	<h2>会员注册</h2>
+                <form enctype="application/x-www-form-urlencoded" method="post" name="registerform"  action="/User/act_register">
+                <table width="500" border="0">
+                  <tr>
+                    <td>用户名：</td>
+                    <td><input type="text"  name="username"/></td>
+                  </tr>
+                  <tr>
+                    <td>密码：</td>
+                    <td><input type="password"  name="password"/></td>
+                  </tr>
+                  <tr>
+                    <td>重复密码：</td>
+                    <td><input type="password" name="repassword"</td>
+                  </tr>
+                  <tr>
+                    <td>邮箱：</td>
+                    <td><input type="email" name="email" /></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input type="submit" value="注册" /></td>
+                  </tr>
+                </table>
+                </form>
+            </div>		
+        </div>
+			<include file="./Tpl/default/Public/footer.html" />
+    </body>
+</html>

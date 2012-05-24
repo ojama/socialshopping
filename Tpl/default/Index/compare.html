@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>比较：{$list.0.productName}-{$list.1.productName}-{$list.2.productName}-{$list.3.productName}-{$list.4.productName}</title>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/Css/common.css'>
+
+</head>
+
+<body>
+<div class="head">
+        <include file="./Tpl/Public/statusbar.html" />
+        <include file="./Tpl/Public/searchformup.html" />
+</div>
+<div class="compare_main">
+<table class="compare_table">
+  <tr>
+    <td>&nbsp;</td>
+    <td>比较1</td>
+    <td>比较2</td>
+    <td>比较3</td>
+    <td>比较4</td>
+    <td>比较5</td>
+  </tr>
+  <tr>
+    <td>产品名称</td>
+    <td><a href="{$list.0.url}">{$list.0.productName}</a></td>
+    <td><a href="{$list.1.url}">{$list.1.productName}</a></td>
+    <td><a href="{$list.2.url}">{$list.2.productName}</a></td>
+    <td><a href="{$list.3.url}">{$list.3.productName}</a></td>
+    <td><a href="{$list.4.url}">{$list.4.productName}</a></td>
+  </tr>
+  <tr>
+    <td>点评</td>
+    <td>顶：{$list.0.good}踩：{$list.0.bad}评论{$list.0.commentcount}</td>
+    <td>顶：{$list.1.good}踩：{$list.1.bad}评论{$list.1.commentcount}</td>
+    <td>顶：{$list.2.good}踩：{$list.2.bad}评论{$list.2.commentcount}</td>
+    <td>顶：{$list.3.good}踩：{$list.3.bad}评论{$list.3.commentcount}</td>
+    <td>顶：{$list.4.good}踩：{$list.4.bad}评论{$list.4.commentcount}</td>
+  </tr>
+  <tr>
+    <td>来至</td>
+    <td><a href="{$list.0.merchantTopurl}">{$list.0.merchantName}</a></td>
+    <td><a href="{$list.1.merchantTopurl}">{$list.1.merchantName}</a></td>
+    <td><a href="{$list.2.merchantTopurl}">{$list.2.merchantName}</a></td>
+    <td><a href="{$list.3.merchantTopurl}">{$list.3.merchantName}</a></td>
+    <td><a href="{$list.4.merchantTopurl}">{$list.4.merchantName}</a></td>
+  </tr>
+  <tr>
+    <td>品牌</td>
+    <td>{$list.0.pinPai}</td>
+    <td>{$list.1.pinPai}</td>
+    <td>{$list.2.pinPai}</td>
+    <td>{$list.3.pinPai}</td>
+    <td>{$list.4.pinPai}</td>
+  </tr>
+  <tr>
+    <td>价格</td>
+    <td>{$list.0.showPrice}元</td>
+    <td>{$list.1.showPrice}元</td>
+    <td>{$list.2.showPrice}元</td>
+    <td>{$list.3.showPrice}元</td>
+    <td>{$list.4.showPrice}元</td>
+  </tr>
+  <tr>
+    <td>市场价</td>
+    <td>{$list.0.showRefPrice}元</td>
+    <td>{$list.1.showRefPrice}元</td>
+    <td>{$list.2.showRefPrice}元</td>
+    <td>{$list.3.showRefPrice}元</td>
+    <td>{$list.4.showRefPrice}元</td>
+  </tr>
+  <tr>
+    <td>产品图片</td>
+    <td><img src="{$list.0.picurl}" width="180"  /></td>
+    <td><img src="{$list.1.picurl}" width="180" /></td>
+    <td><img src="{$list.2.picurl}" width="180" /></td>
+    <td><img src="{$list.3.picurl}" width="180" /></td>
+    <td><img src="{$list.4.picurl}" width="180" /></td>
+  </tr>
+    <tr>
+    <td>产品说明</td>
+    <td>{$list.0.shortIntro}</td>
+    <td>{$list.1.shortIntro}</td>
+    <td>{$list.2.shortIntro}</td>
+    <td>{$list.3.shortIntro}</td>
+    <td>{$list.4.shortIntro}</td>
+  </tr>
+
+  </table>
+
+</div>
+<include file="./Tpl/Public/footer.html" />
+</body>
+</html>
